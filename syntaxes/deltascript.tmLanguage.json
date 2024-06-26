@@ -2,31 +2,36 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "DeltaScript",
 	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#base_types"
-		}, 
-		{
-			"include": "#strings"
-		}
+		{ "include": "#strings" }, 
+		{ "include": "#keywords" },
+		{ "include": "#num_lits" }
 	],
 	"repository": {
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.deltascript",
-				"match": "\\b(if|else|in|final|do|while|for|return|new)\\b"
-			}]
+			"patterns": [
+				{ "include": "#misc_kw" }, 
+				{ "include": "#base_types" }
+			]
 		},
+		"misc_kw": {
+			"match": "\\b(if|else|in|final|do|while|for|return|new)\\b", 
+			"name": "keyword"
+		}, 
+		"num_lits": {
+			"patterns": [
+				{ "include": "#int_lit" }
+			]
+		}, 
+		"int_lit":{ 
+			"match": "[0-9]+", 
+			"name": "constant.numeric"
+		 }, 
 		"base_types": {
-			"patterns": [{
-				"name": "base_type.control.deltascript",
-				"match": "\\b(string|image|color|int|float|bool)\\b"
-			}]
+			"match": "\\b(bool|color|float|image|int|string)\\b", 
+			"name": "entity.name.type"
 		},
 		"strings": {
-			"name": "string.quoted.double.deltascript",
+			"name": "string.quoted.double",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [

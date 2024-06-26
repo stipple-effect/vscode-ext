@@ -2,20 +2,19 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "Stipple Effect extension",
 	"patterns": [
-		{
-			"include": "#ext_types"
-		}, 
-        {
-            "include": "source.ds"
-        }
+        { "include": "source.ds" }, 
+		{ "include": "#ext_types" }, 
+        { "include": "#namespace" }
 	],
 	"repository": {
 		"ext_types": {
-			"patterns": [{
-				"name": "ext_type.control.se_ext",
-				"match": "\\b(layer|palette|project)\\b"
-			}]
-		}
+			"name": "entity.name.type",
+			"match": "\\b(layer|palette|project)\\b"
+		}, 
+        "namespace": {
+            "name": "entity.name.class", 
+            "match": "\\b\\$SE\\.\\w+\\b"
+        }
 	},
 	"scopeName": "source.ses"
 }
