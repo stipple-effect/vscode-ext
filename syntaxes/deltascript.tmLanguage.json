@@ -2,41 +2,134 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "DeltaScript",
 	"patterns": [
+		{ "include": "#comments" }, 
 		{ "include": "#strings" }, 
+		{ "include": "#operator" }, 
 		{ "include": "#keywords" },
-		{ "include": "#num_lits" }
+		{ "include": "#function" }, 
+		{ "include": "#literals" }
 	],
 	"repository": {
+		"comments": {
+			"patterns": [
+				{ "include": "#line_comment" }, 
+				{ "include": "#block_comment" }
+			]
+		}, 
+		"line_comment": {
+			"match": "//.*$", 
+			"name": "comment.line"
+		}, 
+		"block_comment": {
+			"begin": "/\\*",
+            "end": "\\*/", 
+			"name": "comment.block"
+		}, 
 		"keywords": {
 			"patterns": [
 				{ "include": "#misc_kw" }, 
-				{ "include": "#base_types" }
+				{ "include": "#decl_mod" }, 
+				{ "include": "#base_types" }, 
+				{ "include": "#EOL" }
 			]
 		},
 		"misc_kw": {
-			"match": "\\b(if|else|in|final|do|while|for|return|new)\\b", 
+			"match": "\\b(if|else|in|do|while|for|return|new)\\b", 
 			"name": "keyword"
+		},
+		"decl_mod": {
+			"match": "\\bfinal\\b|~", 
+			"name": "keyword"
+		}, 
+		"base_types": {
+			"match": "\\b(bool|char|color|float|image|int|string)\\b", 
+			"name": "entity.name.type"
+		},
+		"EOL": {
+			"match": ";", 
+			"name": "keyword"
+		}, 
+        "operator": {
+			"match": "\\+|\\-|\\*|\\/|%|==|!=|>|<|>=|<=|\\^|&&|\\|\\||!|\\|\\||\\?|:|=|\\+=|-=|\\*=|/=|%=|&=|\\|=|::|#\\|", 
+			"name": "keyword.operator"
+		}, 
+		"literals": {
+			"patterns": [
+				{ "include": "#num_lits" }, 
+				{ "include": "#hex_color" }, 
+				{ "include": "#char_lits" }
+			]
 		}, 
 		"num_lits": {
 			"patterns": [
+				{ "include": "#f_style_lit" },
+				{ "include": "#decimal_lit" },
+				{ "include": "#hex_lit" },   
 				{ "include": "#int_lit" }
 			]
 		}, 
-		"int_lit":{ 
-			"match": "[0-9]+", 
+		"f_style_lit": {
+			"match": "\\b\\d+f\\b", 
 			"name": "constant.numeric"
-		 }, 
-		"base_types": {
-			"match": "\\b(bool|color|float|image|int|string)\\b", 
-			"name": "entity.name.type"
+		}, 
+		"decimal_lit": {
+			"match": "\\b\\d+\\.\\d+\\b", 
+			"name": "constant.numeric"
+		}, 
+		"hex_lit": {
+			"match": "\\b0x[0-9a-f]+\\b", 
+			"name": "constant.numeric"
+		}, 
+		"int_lit": { 
+			"match": "\\b\\d+\\b", 
+			"name": "constant.numeric"
 		},
+		"function": {
+			"patterns": [
+				{ "include": "#func_def" }, 
+				{ "include": "#scoped_func_call" }, 
+				{ "include": "#func_call" }, 
+				{ "include": "#scoped_property" }
+			]
+		}, 
+		"scoped_property": {
+            "name": "entity.name.tag",
+            "match": "(?<=\\.)\\s*[A-Za-z_][A-Za-z0-9_]*(?=\\b)"
+        }, 
+		"scoped_func_call": {
+            "name": "entity.name.function",
+            "match": "(?<=\\.)\\s*[A-Za-z_][A-Za-z0-9_]*\\s*(?=\\()"
+        }, 
+		"func_def": {
+			"match": "^[A-Za-z_][A-Za-z0-9_]*\\s*(?=\\()", 
+			"name": "emphasis"
+		}, 
+		"func_call": {
+			"match": "[A-Za-z_][A-Za-z0-9_]*\\s*(?=\\()", 
+			"name": "entity.name.function"
+		}, 
+		"hex_color": {
+			"name": "invalid.illegal",
+			"match": "\\#[0-9a-fA-F]{6}(?:[0-9a-fA-F]{2})?\\b"
+		}, 
+		"char_lits": {
+			"name": "string.quoted.single",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape",
+					"match": "\\\\."
+				}
+			]
+		}, 
 		"strings": {
 			"name": "string.quoted.double",
 			"begin": "\"",
 			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.deltascript",
+					"name": "constant.character.escape",
 					"match": "\\\\."
 				}
 			]

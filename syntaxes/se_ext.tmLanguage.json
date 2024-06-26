@@ -12,8 +12,8 @@
 			"match": "\\b(layer|palette|project)\\b"
 		}, 
         "namespace": {
-            "name": "entity.name.class", 
-            "match": "\\b\\$SE\\.\\w+\\b"
+            "match": "\\$SE\\b", 
+            "name": "emphasis"
         }
 	},
 	"scopeName": "source.ses"
