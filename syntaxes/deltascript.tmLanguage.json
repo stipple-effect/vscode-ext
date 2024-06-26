@@ -30,7 +30,7 @@
 				{ "include": "#misc_kw" }, 
 				{ "include": "#decl_mod" }, 
 				{ "include": "#base_types" }, 
-				{ "include": "#EOL" }
+				{ "include": "#punctuation" }
 			]
 		},
 		"misc_kw": {
@@ -45,12 +45,12 @@
 			"match": "\\b(bool|char|color|float|image|int|string)\\b", 
 			"name": "entity.name.type"
 		},
-		"EOL": {
-			"match": ";", 
+		"punctuation": {
+			"match": ";|,", 
 			"name": "keyword"
 		}, 
         "operator": {
-			"match": "\\+|\\-|\\*|\\/|%|==|!=|>|<|>=|<=|\\^|&&|\\|\\||!|\\|\\||\\?|:|=|\\+=|-=|\\*=|/=|%=|&=|\\|=|::|#\\|", 
+			"match": "\\+|\\-|\\*|\\/|%|==|!=|>|<|>=|<=|\\^|&&|\\|\\||!|\\|\\||\\?|:|=|\\+=|-=|\\*=|/=|%=|&=|\\|=|#\\|", 
 			"name": "keyword.operator"
 		}, 
 		"literals": {
@@ -89,12 +89,13 @@
 				{ "include": "#func_def" }, 
 				{ "include": "#scoped_func_call" }, 
 				{ "include": "#func_call" }, 
+				{ "include": "#func_pointer" }, 
 				{ "include": "#scoped_property" }
 			]
 		}, 
 		"scoped_property": {
             "name": "entity.name.tag",
-            "match": "(?<=\\.)\\s*[A-Za-z_][A-Za-z0-9_]*(?=\\b)"
+            "match": "(?<=\\.)\\s*[A-Za-z_][A-Za-z0-9_]*\\b"
         }, 
 		"scoped_func_call": {
             "name": "entity.name.function",
@@ -108,6 +109,10 @@
 			"match": "[A-Za-z_][A-Za-z0-9_]*\\s*(?=\\()", 
 			"name": "entity.name.function"
 		}, 
+		"func_pointer": {
+			"match": "(?<=::)\\s*[A-Za-z_][A-Za-z0-9_]*\\b", 
+			"name": "emphasis"
+		},
 		"hex_color": {
 			"name": "invalid.illegal",
 			"match": "\\#[0-9a-fA-F]{6}(?:[0-9a-fA-F]{2})?\\b"
