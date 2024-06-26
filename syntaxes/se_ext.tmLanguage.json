@@ -4,7 +4,10 @@
 	"patterns": [
 		{
 			"include": "#ext_types"
-		}
+		}, 
+        {
+            "include": "source.ds"
+        }
 	],
 	"repository": {
 		"ext_types": {

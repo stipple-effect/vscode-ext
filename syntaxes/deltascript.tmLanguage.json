@@ -9,9 +9,6 @@
 			"include": "#base_types"
 		}, 
 		{
-			"include": "#ext_types"
-		},
-		{
 			"include": "#strings"
 		}
 	],
@@ -19,19 +16,13 @@
 		"keywords": {
 			"patterns": [{
 				"name": "keyword.control.deltascript",
-				"match": "\\b(if|else|in|final|~|do|while|for|return|new)\\b"
+				"match": "\\b(if|else|in|final|do|while|for|return|new)\\b"
 			}]
 		},
 		"base_types": {
 			"patterns": [{
 				"name": "base_type.control.deltascript",
 				"match": "\\b(string|image|color|int|float|bool)\\b"
-			}]
-		},
-		"ext_types": {
-			"patterns": [{
-				"name": "ext_type.control.deltascript",
-				"match": "\\b(layer|palette|project)\\b"
 			}]
 		},
 		"strings": {
@@ -46,5 +37,5 @@
 			]
 		}
 	},
-	"scopeName": "source.ses"
+	"scopeName": "source.ds"
 }
