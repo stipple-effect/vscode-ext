@@ -3,7 +3,7 @@
     "displayName": "DeltaScript for Stipple Effect",
     "description": "Syntax highlighting for Stipple Effect scripts",
     "version": "1.0.0",
-    "publisher": "Jordan Bunke",
+    "publisher": "jordanbunke",
     "icon": "./icon.png",
     "sponsor": {
         "url": "https://jbunke.github.io/support"
