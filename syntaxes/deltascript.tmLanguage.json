@@ -57,9 +57,14 @@
 			"patterns": [
 				{ "include": "#num_lits" }, 
 				{ "include": "#hex_color" }, 
-				{ "include": "#char_lits" }
+				{ "include": "#char_lits" }, 
+				{ "include": "#bool_lits" }
 			]
 		}, 
+		"bool_lits": {
+			"match": "\\b(true|false)\\b", 
+			"name": "keyword"
+		},
 		"num_lits": {
 			"patterns": [
 				{ "include": "#f_style_lit" },
@@ -114,7 +119,7 @@
 			"name": "emphasis"
 		},
 		"hex_color": {
-			"name": "invalid.illegal",
+			"name": "constant.numeric",
 			"match": "\\#[0-9a-fA-F]{6}(?:[0-9a-fA-F]{2})?\\b"
 		}, 
 		"char_lits": {
