@@ -6,7 +6,7 @@
 
 *For the release of Stipple Effect v1.2.0*
 
-### Added
+### Added:
 
 * Highlighting for new types
   * `save_config`
