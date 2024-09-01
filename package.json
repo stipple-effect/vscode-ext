@@ -2,7 +2,7 @@
     "name": "deltascript-for-stipple-effect",
     "displayName": "DeltaScript for Stipple Effect",
     "description": "Syntax highlighting for Stipple Effect scripts",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "publisher": "jordanbunke",
     "icon": "./icon.png",
     "sponsor": {
