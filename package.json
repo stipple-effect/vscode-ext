@@ -18,14 +18,24 @@
         "languages": [
             {
                 "id": "deltascript",
-                "aliases": ["DeltaScript", "deltascript"],
-                "extensions": [".ds"],
+                "aliases": [
+                    "DeltaScript",
+                    "deltascript"
+                ],
+                "extensions": [
+                    ".ds"
+                ],
                 "configuration": "./language-configuration.json"
-            }, 
+            },
             {
                 "id": "se_ext",
-                "aliases": ["DeltaScript for Stipple Effect", "deltascript"],
-                "extensions": [".ses"],
+                "aliases": [
+                    "DeltaScript for Stipple Effect",
+                    "deltascript"
+                ],
+                "extensions": [
+                    ".ses"
+                ],
                 "configuration": "./language-configuration.json"
             }
         ],
@@ -34,7 +44,7 @@
                 "language": "deltascript",
                 "scopeName": "source.ds",
                 "path": "./syntaxes/deltascript.tmLanguage.json"
-            }, 
+            },
             {
                 "language": "se_ext",
                 "scopeName": "source.ses",
