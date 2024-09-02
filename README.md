@@ -1,6 +1,6 @@
 # DeltaScript for Stipple Effect - VS Code Syntax Highlighting Extension
 
-This VS Code extension provides syntax highlighting for the extension flavour of my lightweight scripting language [*DeltaScript*](https://github.com/jbunke/delta-time/wiki/DeltaScript) for my pixel art editor [*Stipple Effect*](https://github.com/jbunke/stipple-effect).
+This VS Code extension provides syntax highlighting for the extension flavour of my lightweight scripting language [DeltaScript](https://github.com/jbunke/deltascript) for my pixel art editor [Stipple Effect](https://github.com/jbunke/stipple-effect).
 
 ### If you are reading this on GitHub...
 
