@@ -12,7 +12,7 @@
 			"match": "\\b(layer|palette|project|save_config|script)\\b"
 		}, 
         "namespace": {
-            "match": "\\$SE\\b", 
+            "match": "\\$(SE|Graphics|Math)\\b", 
             "name": "emphasis"
         }
 	},
