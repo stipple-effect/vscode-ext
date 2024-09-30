@@ -2,6 +2,17 @@
 
 *Versions not represented in the changelog made no code changes.*
 
+## 1.1.3 - 2024-10-01
+
+*For the release of Stipple Effect v1.2.2*
+
+## Added:
+
+* Highlighting for the new `light` type
+* Highlighting for new namespaces
+  * `$Graphics`
+  * `$Math`
+
 ## 1.1.0 - 2024-09-02
 
 *For the release of Stipple Effect v1.2.0*
