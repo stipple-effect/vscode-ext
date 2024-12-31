@@ -12,5 +12,5 @@ This extension is open source. You can browse the source code [here](https://git
 
 ### More
 
-* [*Stipple Effect* scripting API](https://github.com/jbunke/se-api)
+* [*Stipple Effect* scripting API specification](https://jbunke.github.io/se/api)
 * [*Stipple Effect* script examples](https://github.com/jbunke/se-script-examples)
