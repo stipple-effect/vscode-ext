@@ -34,7 +34,7 @@
 			]
 		},
 		"misc_kw": {
-			"match": "\\b(if|else|in|do|while|for|return|new|when|is|passes|otherwise)\\b", 
+			"match": "\\b(if|else|in|do|while|for|return|new|when|is|passes|matches|otherwise)\\b", 
 			"name": "keyword"
 		},
 		"decl_mod": {
